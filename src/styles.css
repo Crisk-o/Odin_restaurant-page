@@ -57,29 +57,26 @@ nav{
 .creditLink:visited{
     color: black;
 }
-#menuContainer {
-    display: grid;
-    grid-template-columns: 20% 80%;
-    width: 100%;
+/* holds menuOptions */
+#menuContainer { 
+    width: 100vw;
     height: fit-content;
-    justify-content: center;
-    justify-self: center;
-
 }
-
 #menuOptions {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 400px 400px 400px;
-    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 75%;
 }
-#menuImgContainer {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 400px 400px 400px;
-}
+
+/* modifies food images */
 .menuImg{
     height: 400px;
     width: 400px;
 }
 
+.foodItem{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid black;
+}
