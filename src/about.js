@@ -9,9 +9,10 @@ export function loadAboutTab(){
     const aboutTextContainer = document.createElement('div');
     aboutTextContainer.id = "about-text-container";
     const aboutText = document.createElement('p');
-    aboutText.textContent = `Heartland Bistro, situated in the vibrant city of Kansas City, prides itself on its commitment to using locally sourced ingredients. 
-    We showcase the rich agricultural heritage of the region by partnering with local farmers and producers,
-    but also emphasize sustainability and freshness in every dish we serve.`
+    const aboutTextLineBreak = document.createElement('br');
+    const aboutTextNode1 = document.createTextNode("Heartland Bistro, situated in the vibrant city of Kansas City, prides itself on its commitment to using locally sourced ingredients.")
+    const aboutTextNode2 = document.createTextNode("We showcase the rich agricultural heritage of the region by partnering with local farmers and producers so we may emphasize sustainability, freshness, and flavor in every dish we serve.")
+    aboutText.append(aboutTextNode1,aboutTextLineBreak, aboutTextNode2);
 
     
     const contactUsList = document.createElement('ul');
