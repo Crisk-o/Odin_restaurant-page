@@ -3,6 +3,19 @@
   font-weight: 400;
   font-style: normal;
 }
+.almendra-sc-regular {
+  font-family: "Almendra SC", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Color Palette 
+#604652 dark-purplish brown
+#735557 bear brown
+#97866A wood brown
+#D29F80 biege
+#EBD9D1 body background-color - light brown
+*/
 
 body {
    font-family: "Fjord One";
@@ -14,7 +27,11 @@ header {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background-color: #B87C4C;
+    width: 100%;
+    background-color: #735557;
+}
+#title { 
+    font-family: "Almendra SC";
 }
 nav{
     display: flex;
@@ -36,9 +53,47 @@ nav{
     justify-content: center;
     align-items: center;
 }
+#welcomeDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 600px;
+    color: white;
+    background-image: linear-gradient(black,white);
+    background-image: url("./resources/restaurant-interior-glenov-brankovic-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 #chefImage {
     height: 300px;
     width: 300px;
+}
+#welcomeImage {
+    height: 50%;
+    width: 100vw;
+}
+#reservationsDiv {
+    display: flex;
+    flex-direction: column;
+    background-color: #EBD9D1;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 15px;
+}
+#reservationsBtn {
+    display: flex;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    height: 100px;
+    width: 300px;
+    border-radius: 15px;
 }
 #about-text-container {
     width: 30%;
@@ -59,24 +114,44 @@ nav{
 }
 /* holds menuOptions */
 #menuContainer { 
-    width: 100vw;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(3, 400px);
+    width: 100%;
     height: fit-content;
 }
 #menuOptions {
     display: flex;
     flex-direction: column;
-    width: 75%;
+    text-align: start;
+    width: 90%;
+    height: fit-content;
+    list-style: none;
 }
 
 /* modifies food images */
 .menuImg{
     height: 400px;
-    width: 400px;
+    width: 500px;
+    padding: 10px;
+    margin: 0;
+    display: flex;
+    align-items: start;
+    
 }
-
+/* the divs that hold the food items and the images*/
 .foodItem{
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    border: 1px solid black;
+    justify-content: space-around;
+    border-bottom: 1px solid black;
+    
+
+}
+.food-info{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    font-size: 20px;
+    
 }

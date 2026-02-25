@@ -3,6 +3,7 @@ import { loadHomeTab } from "./home.js";
 import { loadMenuTab } from "./menu.js";
 import { loadAboutTab } from "./about.js";
 
+window.addEventListener('load', loadHomeTab());
 /* addEventListeners for each button/tab to load respective functions.*/
 const homeTabBtn = document.getElementById('home');
 homeTabBtn.addEventListener('click', loadHomeTab);
