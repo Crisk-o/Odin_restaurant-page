@@ -22,10 +22,13 @@ body {
    background-color: #EBD9D1;
    width: 100vw;
    height: 100vh;
+   margin: 0;
+   padding: 0;
 }
 header {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 250px;
     align-items: center;
     width: 100%;
     background-color: #735557;
@@ -35,6 +38,7 @@ header {
 }
 nav{
     display: flex;
+    align-items: center;
     justify-content: space-evenly;
     gap: 20px;
 }
@@ -67,10 +71,7 @@ nav{
     background-position: center;
     background-repeat: no-repeat;
 }
-#chefImage {
-    height: 300px;
-    width: 300px;
-}
+
 #welcomeImage {
     height: 50%;
     width: 100vw;
@@ -85,6 +86,11 @@ nav{
     padding: 20px;
     border-radius: 15px;
 }
+#reservationsDiv > p {
+    margin-top: 0;
+    padding-top: 0;
+}
+
 #reservationsBtn {
     display: flex;
     color: black;
@@ -94,6 +100,17 @@ nav{
     height: 100px;
     width: 300px;
     border-radius: 15px;
+}
+#homeInfoDiv {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 25px;
+    text-align: center;
+    
+}
+
+.home-info-content > h2{
+    border-bottom: 1px solid black;
 }
 #about-text-container {
     width: 30%;
