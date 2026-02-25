@@ -101,10 +101,18 @@ nav{
     width: 300px;
     border-radius: 15px;
 }
+#reservationForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
 #homeInfoDiv {
     display: flex;
     justify-content: space-evenly;
-    gap: 25px;
+    gap: 50px;
     text-align: center;
     
 }

@@ -21,7 +21,68 @@ export function loadHomeTab() {
     makeReservationsBtn.textContent = "Make A Reservation"
     makeReservationsBtn.id = "reservationsBtn";
     makeReservationsBtn.name = "reservationsBtn";
-    // makeReservationsBtn.addEventListener() // add to make form pop-up.
+    // creating reservation form
+    const reservationDialog = document.createElement('dialog');
+    const reservationFormContainer = document.createElement('div');
+    const reservationForm = document.createElement('form');
+    reservationForm.id = "reservationForm";
+    reservationForm.method = "dialog";
+  
+
+    // name
+    const nameLabel = document.createElement('label');
+    nameLabel.textContent = "Name: ";
+    nameLabel.for = "nameInput";
+    const nameInput = document.createElement('input');
+    nameInput.name = "nameInput";
+    nameInput.type = "text";
+    nameInput.id = "nameInput";
+    // phone
+    const phoneLabel = document.createElement('label');
+    phoneLabel.textContent = "Phone Number: ";
+    phoneLabel.for = "phoneInput";
+    const phoneInput = document.createElement('input');
+    phoneInput.name = "phoneInput";
+    phoneInput.id = "phoneInput";
+    phoneInput.type = "tel";
+    // date/time
+    const dateLabel = document.createElement('label');
+    dateLabel.for = "dateInput";
+    const dateInput = document.createElement('input');
+    dateInput.name = "dateInput";
+    dateInput.id = "dateInput";
+
+    // number of people
+    const grpNumberLabel = document.createElement('label');
+    grpNumberLabel.textContent = "Number in Party: ";
+    grpNumberLabel.for = "grpNumberInput";
+    const grpNumberInput = document.createElement('input');
+    grpNumberInput.name = "grpNumberInput";
+    grpNumberInput.id = "grpNumberInput";
+    grpNumberInput.type = "number";
+    grpNumberInput.min = 1;
+    grpNumberInput.max = 10;
+
+    // submit form
+    const submitFormBtnLabel = document.createElement('label');
+    submitFormBtnLabel.for = "submitFormBtn";
+    const submitFormBtn = document.createElement('button');
+    submitFormBtn.textContent = "Submit Form"
+    submitFormBtn.name = "submitFormBtn";
+    submitFormBtn.type = "submit";
+    submitFormBtn.id = "submit";
+    submitFormBtn.value = "Submit";
+
+    reservationForm.addEventListener('submit', (event) => { // event listener for form submission
+        event.preventDefault();
+        reservationDialog.close();
+    });
+
+    reservationForm.append(nameLabel, nameInput, phoneLabel, phoneInput, grpNumberLabel, grpNumberInput, submitFormBtnLabel, submitFormBtn);
+    reservationDialog.append(reservationForm);
+    reservationFormContainer.append(reservationDialog);
+
+    makeReservationsBtn.addEventListener('click', () => { reservationDialog.showModal() });
     reservationsDiv.append(title, info, makeReservationsBtnLabel, makeReservationsBtn);
 
     const restaurantInfoDiv = document.createElement('div');
@@ -61,7 +122,7 @@ export function loadHomeTab() {
     restaurantInfoDiv.append(locationDiv, hoursDiv, contactDiv);
 
     welcomeDiv.append(reservationsDiv);
-    contentDiv.append(welcomeDiv, restaurantInfoDiv);
+    contentDiv.append(welcomeDiv, restaurantInfoDiv, reservationFormContainer);
     
 };
 
